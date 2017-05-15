@@ -55,10 +55,10 @@ weights_filename = 'cnn_model_weights.hdf5'
 
 train_data_dir = 'data/train'
 validation_data_dir = 'data/validation'
-nb_train_samples = 2000
+nb_train_samples = 6000
 nb_validation_samples = 800
-epochs = 1
-batch_size = 16
+epochs = 50
+batch_size = 32
 
 if K.image_data_format() == 'channels_first':
     input_shape = (3, img_width, img_height)

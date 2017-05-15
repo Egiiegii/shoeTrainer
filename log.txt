@@ -1,0 +1,23 @@
+date
+	train 		class0	+	class1
+	valdidation class0	+	class1
+4.10 dark
+4.12 light
+	training 	63 		+ 	57
+	validation 	19		+ 	15
+4.19 
+	training:   165		+ 	57 
+	validation: 34		+	15 
+	test:	    38		+	15
+
+Epoch 39/50
+186/187 [============================>.] - ETA: 0s - loss: 0.0070 - acc: 0.9991Epoch 00038: val_loss improved from 0.00000 to 0.00000, saving model to ./saved/weights.hdf5
+
+Epoch 50/50
+186/187 [============================>.] - ETA: 0s - loss: 0.0095 - acc: 0.9990Epoch 00049: val_loss did not improve
+187/187 [==============================] - 4s - loss: 0.0095 - acc: 0.9990 - val_loss: 1.1327e-07 - val_acc: 1.0000
+save the architecture of a model
+save weights
+
+
+finetuning
