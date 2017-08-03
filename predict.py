@@ -13,7 +13,7 @@ from keras.optimizers import SGD
 from keras.utils import np_utils
 from keras.callbacks import EarlyStopping
 from keras.layers import Convolution2D, MaxPooling2D
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt # for mac
 import os.path
 from keras.models import model_from_json
 import PIL.ImageOps    
