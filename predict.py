@@ -1,8 +1,3 @@
-#coding: utf-8
-'''
-Kizu Recog 2017.1.13
- 
-'''
 from __future__ import print_function
 import numpy as np
 import cv2
