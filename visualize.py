@@ -20,7 +20,11 @@ import PIL.ImageOps
 import sys
 import time
 from PIL import Image, ImageDraw, ImageFont
- 
+from keras import backend as K 
+
+# get the symbolic outputs of each "key" layer (we gave them unique names).
+layer_dict = dict([(layer.name, layer) for layer in model.layers])
+
 np.random.seed(1337)  # for reproducibility
  
 class predictDigit(object):
@@ -56,23 +60,11 @@ class predictDigit(object):
         sgd = SGD(lr=1e-2, decay=1e-6, momentum=0.9, nesterov=True)
  
         model.load_weights(os.path.join(f_model,weights_filename))
-        
-        #2. load picture
-        im = Image.open(fileName, 'r')
-        if im is None:
-            print("no image file selected")
-            return
-        im.save("temp.jpg")
-        im=cv2.imread("temp.jpg")
-        im= np.array(im)
-        forShowIm = cv2.imread(fileName)
-        forShowIm = cv2.resize(forShowIm, size)
-        windowNP= forShowIm.reshape(-1,56,56,3)
 
-        # 5. for each window, predict foreign object certainty
-        preds = model.predict(windowNP, batch_size=26, verbose=1)
-        
-        print(preds)
+        # get the symbolic outputs of each "key" layer (we gave them unique names).
+        layer_dict = dict([(layer.name, layer) for layer in model.layers])
+        for name, layer in layer_dict:
+            print("name:"+name)
         
 
 if __name__ == "__main__":
